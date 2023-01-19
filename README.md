@@ -1,6 +1,6 @@
 # Hello, Visitor! 👋
 
-I am Yuvraj Shekhawat. I have strong media and communication professional with a Bachelor of Technology focused in Electronics and communication and engineering from _Jaipur Engineering College and Research Center, Jaiput_. I am proficiently skilled in C++ and Java. My activities are much beyond my stream of education.
+I am Yuvraj Shekhawat. I have strong media and communication professional with a Bachelor of Technology focused in Electronics and communication and engineering from _Jaipur Engineering College and Research Center, Jaipur_. I am proficiently skilled in C++ and Java. My activities are much beyond my stream of education.
 
 ### ⚡ One line that describes me best? 
 An ambitious person who loves to Push his limits, day dream at nights and sometime codes too.😉😉
