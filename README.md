@@ -6,7 +6,7 @@ I am Yuvraj Shekhawat. I am a strong media and communication professional with a
 An ambitious person who loves to Push his limits, day dream at nights and sometime codes too.😉😉
 
 ### 📫 How to reach me? 
-- [LinkedIn](https://www.linkedin.com/in/yuvraj-shekhawat-415918221/) 
+- [LinkedIn](https://www.linkedin.com/in/yuvraj-shekhawat/) 
 - [Email](yuvisshekhawat@gmail.com)
 
 You can ask me anything (within reason). I am looking forward to absorb knowledge🧠,gain experience 🏭, collaborate🤝 and build amazing products 🏭for the world🌍!
