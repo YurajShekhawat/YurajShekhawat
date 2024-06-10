@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuvraj Shekhawat - Software Engineer</title>
+    <title>Welcome to Yuvraj Shekhawat's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Raleway', sans-serif;
             background: #f4f4f4;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
         }
         header {
             background: #333;
@@ -26,11 +22,13 @@
         header h1 {
             margin: 0;
             font-size: 2.5em;
+            animation: fadeInDown 1s ease;
         }
         .intro {
             text-align: center;
             padding: 50px 0;
             background: #fff;
+            animation: fadeIn 2s ease;
         }
         .intro h2 {
             font-size: 2em;
@@ -40,9 +38,25 @@
             font-size: 1.2em;
             margin: 0;
         }
+        .experience {
+            text-align: center;
+            padding: 50px 0;
+            background: #f9f9f9;
+            animation: fadeIn 2s ease;
+        }
+        .experience h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .experience p {
+            font-size: 1.2em;
+            margin: 0;
+            animation: bounce 2s infinite;
+        }
         .skills {
             padding: 20px 0;
-            background: #f9f9f9;
+            background: #fff;
+            animation: fadeIn 2s ease;
         }
         .skills h2 {
             text-align: center;
@@ -62,15 +76,21 @@
             margin: 10px;
             padding: 15px;
             border-radius: 5px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
+            cursor: pointer;
         }
         .skills ul li:hover {
             transform: scale(1.1);
+            background: #333;
+        }
+        .skills ul li:active {
+            transform: scale(0.9);
         }
         .contact {
             text-align: center;
             padding: 50px 0;
-            background: #fff;
+            background: #f9f9f9;
+            animation: fadeIn 2s ease;
         }
         .contact h2 {
             font-size: 2em;
@@ -95,57 +115,119 @@
         footer p {
             margin: 0;
         }
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .intro, .skills, .contact {
-            animation: slideIn 1s ease;
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-30px);}
+            60% {transform: translateY(-15px);}
+        }
+        .skills-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        .skills-popup h3 {
+            margin-top: 0;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 500;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Yuvraj Shekhawat</h1>
-        </div>
+        <h1>Welcome to Yuvraj Shekhawat's Portfolio</h1>
     </header>
 
     <div class="intro">
-        <div class="container">
-            <h2>Software Engineer</h2>
-            <p>Passionate about developing scalable web applications and working with cutting-edge technologies.</p>
-        </div>
+        <h2>Hi there, I'm Yuvraj Shekhawat</h2>
+        <p>A passionate Software Engineer with a knack for developing scalable web applications using cutting-edge technologies.</p>
+    </div>
+
+    <div class="experience">
+        <h2>Experience</h2>
+        <p>1.5 years of professional experience and a fast learner!</p>
     </div>
 
     <div class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>Java</li>
-                <li>Golang</li>
-                <li>JavaScript</li>
-                <li>SQL</li>
-                <li>MongoDB</li>
-                <li>Bash</li>
-                <li>Spring Boot</li>
-                <li>React</li>
-                <li>Docker</li>
-            </ul>
-        </div>
+        <h2>Skills</h2>
+        <ul>
+            <li onclick="showPopup('Java')">Java</li>
+            <li onclick="showPopup('Golang')">Golang</li>
+            <li onclick="showPopup('JavaScript')">JavaScript</li>
+            <li onclick="showPopup('SQL')">SQL</li>
+            <li onclick="showPopup('MongoDB')">MongoDB</li>
+            <li onclick="showPopup('Bash')">Bash</li>
+            <li onclick="showPopup('Spring Boot')">Spring Boot</li>
+            <li onclick="showPopup('React')">React</li>
+            <li onclick="showPopup('Docker')">Docker</li>
+        </ul>
     </div>
 
     <div class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:yuvisshekhawat@gmail.com">yuvisshekhawat@gmail.com</a></p>
-            <p>Phone: +91 7727883199</p>
-            <p><a href="https://www.linkedin.com/in/yuvraj-shekhawat" target="_blank">LinkedIn</a> | <a href="https://github.com/YurajShekhawat" target="_blank">GitHub</a></p>
-        </div>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yuvisshekhawat@gmail.com">yuvisshekhawat@gmail.com</a></p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/yuvraj-shekhawat" target="_blank">LinkedIn</a> or check out my projects on <a href="https://github.com/YurajShekhawat" target="_blank">GitHub</a>.</p>
     </div>
 
     <footer>
         <p>&copy; 2024 Yuvraj Shekhawat. All rights reserved.</p>
     </footer>
+
+    <div class="skills-popup" id="skills-popup">
+        <h3 id="skill-title"></h3>
+        <p id="skill-description"></p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
+    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+    <script>
+        const skills = {
+            "Java": "I used Java to develop a high-performance backend system for an e-commerce application, reducing server response time by 30%.",
+            "Golang": "I leveraged Golang to create a microservice architecture, improving system scalability and reducing deployment time by 40%.",
+            "JavaScript": "Implemented dynamic and interactive front-end features using JavaScript, enhancing user engagement and reducing bounce rates by 20%.",
+            "SQL": "Optimized SQL queries to speed up data retrieval processes by 50% in a large-scale financial database application.",
+            "MongoDB": "Designed a flexible and scalable NoSQL database schema with MongoDB, handling millions of transactions daily without performance degradation.",
+            "Bash": "Automated deployment and maintenance tasks using Bash scripts, reducing manual efforts and minimizing system downtime.",
+            "Spring Boot": "Developed a microservices-based application using Spring Boot, resulting in faster development cycles and improved system modularity.",
+            "React": "Built a responsive and interactive user interface with React, increasing user satisfaction and session duration by 25%.",
+            "Docker": "Containerized applications using Docker to ensure consistent environments across development, testing, and production, reducing deployment issues by 35%."
+        };
+
+        function showPopup(skill) {
+            document.getElementById('skill-title').innerText = skill;
+            document.getElementById('skill-description').innerText = skills[skill];
+            document.getElementById('skills-popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('skills-popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
